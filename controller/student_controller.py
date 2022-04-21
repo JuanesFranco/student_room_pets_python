@@ -1,5 +1,6 @@
 from flask import Blueprint, Response,json
-from service.student_service import StudentService, MyEncoder
+from service.student_service import StudentService
+from util.util import MyEncoder
 
 app_student = Blueprint('app_student',__name__)
 studentService= StudentService()
@@ -29,6 +30,7 @@ def get_mayor_salaries(gender):
     return Response(response=json.dumps(
         studentService.get_mayor_salaries(gender),cls=MyEncoder),
         status=200, minetype='application/jason')
+
 
 
 

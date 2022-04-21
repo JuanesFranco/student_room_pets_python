@@ -1,11 +1,5 @@
 from model.student import Student
 
-from json import JSONEncoder
-
-class MyEncoder(JSONEncoder):
-    def default(self, obj):
-        return obj.__dict__
-
 class StudentService():
 
     def __init__(self):
